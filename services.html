@@ -1,1 +1,1534 @@
+<!DOCTYPE html>
+<html lang="fr-BE">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Services | Déménagement, Monte-Meubles, Transport | WouroYobi Lift</title>
+<meta name="description" content="Déménagement, monte-meubles, transport et manutention pour particuliers et professionnels à Bruxelles et alentours. Trouvez le service adapté à votre situation.">
+<meta name="theme-color" content="#111111">
+<link rel="canonical" href="https://wouroyobilift-bruxelles.be/services.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="WouroYobi Lift">
+<meta property="og:locale" content="fr_BE">
+<meta property="og:title" content="Services | Déménagement, Monte-Meubles, Transport | WouroYobi Lift">
+<meta property="og:description" content="Déménagement, monte-meubles, transport et manutention pour particuliers et professionnels à Bruxelles et alentours. Trouvez le service adapté à votre situation.">
+<meta property="og:url" content="https://wouroyobilift-bruxelles.be/services.html">
+<meta property="og:image" content="https://wouroyobilift-bruxelles.be/images/wouroyobi-lift-truck.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   WOUROYOBI LIFT
+   Single-file site styles (identical block in all four pages)
+   Sections: tokens · base · header · buttons · hero · sections
+             · components · planner · print · footer · responsive
+   ========================================================= */
+
+:root {
+    /* Colour: black + white + red. Red is the action colour, never a page background. */
+    --wy-black: #111111;
+    --wy-charcoal: #202020;
+    --wy-white: #ffffff;
+    --wy-red: #d71920;
+    --wy-red-dark: #b3141a;
+    --wy-light: #f4f4f2;
+    --wy-grey: #595959;
+    --wy-grey-on-dark: #b8b8b8;
+    --wy-border: #dcdcd8;
+    --wy-border-dark: #343434;
+
+    --wy-font: "Archivo", Arial, Helvetica, sans-serif;
+    --wy-max: 1180px;
+    --wy-gutter: clamp(1rem, 4vw, 2rem);
+    --wy-section: clamp(3rem, 7vw, 5.5rem);
+    --wy-header: 64px;
+}
+
+/* ---------- base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--wy-header) + 12px); -webkit-text-size-adjust: 100%; }
+html.modal-open { overflow: hidden; }
+body {
+    margin: 0;
+    font-family: var(--wy-font);
+    font-size: 1.0625rem;
+    line-height: 1.55;
+    color: var(--wy-black);
+    background: var(--wy-white);
+}
+img, svg { max-width: 100%; display: block; }
+h1, h2, h3 { margin: 0; line-height: 1.08; font-weight: 800; font-stretch: 88%; letter-spacing: -0.01em; text-wrap: balance; }
+h1 { font-size: clamp(2.25rem, 7.2vw, 4.4rem); }
+h2 { font-size: clamp(1.7rem, 4.4vw, 2.6rem); }
+h3 { font-size: 1.25rem; line-height: 1.2; }
+p { margin: 0; }
+p + p { margin-top: 0.9em; }
+a { color: inherit; }
+ul, ol { margin: 0; padding: 0; list-style: none; }
+button, input, select, textarea { font: inherit; color: inherit; }
+:focus-visible { outline: 3px solid var(--wy-red); outline-offset: 3px; }
+.on-dark :focus-visible, header :focus-visible, footer :focus-visible, .mobile-actions :focus-visible { outline-color: #ffffff; }
+.skip { position: absolute; left: -999px; top: 8px; z-index: 300; background: var(--wy-white); color: var(--wy-black); padding: 0.75rem 1rem; font-weight: 700; }
+.skip:focus { left: 8px; }
+.wrap { width: 100%; max-width: var(--wy-max); margin-inline: auto; padding-inline: var(--wy-gutter); }
+.lede { font-size: 1.15rem; color: var(--wy-grey); max-width: 58ch; }
+.on-dark .lede, .on-dark p { color: var(--wy-grey-on-dark); }
+.on-dark h1, .on-dark h2, .on-dark h3 { color: var(--wy-white); }
+.prose { max-width: 62ch; }
+
+/* ---------- header ---------- */
+header.site {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--wy-black); color: var(--wy-white);
+    border-bottom: 1px solid var(--wy-border-dark);
+}
+.bar { display: flex; align-items: center; gap: 0.75rem; min-height: var(--wy-header); }
+.brand { display: flex; align-items: center; gap: 0.55rem; text-decoration: none; font-weight: 800; font-stretch: 90%; font-size: 1.2rem; letter-spacing: -0.01em; white-space: nowrap; }
+.brand svg { width: 30px; height: 30px; flex: none; }
+.nav { margin-left: auto; display: flex; align-items: center; gap: 0.25rem; }
+.nav a, .nav button.nav-link {
+    display: inline-flex; align-items: center; min-height: 44px; padding: 0 0.8rem;
+    color: var(--wy-white); text-decoration: none; background: none; border: 0; cursor: pointer;
+    font-weight: 600; font-size: 0.98rem; border-bottom: 3px solid transparent;
+}
+.nav a:hover, .nav button.nav-link:hover { border-bottom-color: var(--wy-grey-on-dark); }
+.nav a[aria-current="page"] { border-bottom-color: var(--wy-red); }
+.lang { display: flex; margin-left: 0.5rem; border: 1px solid var(--wy-border-dark); border-radius: 4px; overflow: hidden; }
+.lang button { min-width: 38px; min-height: 40px; padding: 0 0.4rem; background: none; border: 0; color: var(--wy-grey-on-dark); font-weight: 700; font-size: 0.85rem; cursor: pointer; }
+.lang button[aria-pressed="true"] { background: var(--wy-white); color: var(--wy-black); }
+.burger { display: none; width: 44px; height: 44px; margin-left: 0.25rem; background: none; border: 1px solid var(--wy-border-dark); border-radius: 4px; color: var(--wy-white); cursor: pointer; }
+.burger svg { margin: auto; width: 22px; height: 22px; }
+
+/* ---------- buttons ---------- */
+.btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+    min-height: 50px; padding: 0.7rem 1.4rem; border-radius: 4px;
+    font-weight: 700; text-decoration: none; cursor: pointer; border: 2px solid transparent;
+    transition: background-color .18s ease, color .18s ease, border-color .18s ease, transform .18s ease;
+    text-align: center; line-height: 1.2;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn-primary { background: var(--wy-red); color: var(--wy-white); }
+.btn-primary:hover { background: var(--wy-red-dark); }
+.btn-dark { background: var(--wy-black); color: var(--wy-white); }
+.btn-dark:hover { background: var(--wy-charcoal); }
+.btn-outline { background: transparent; color: var(--wy-black); border-color: var(--wy-black); }
+.btn-outline:hover { background: var(--wy-black); color: var(--wy-white); }
+.on-dark .btn-outline { color: var(--wy-white); border-color: var(--wy-white); }
+.on-dark .btn-outline:hover { background: var(--wy-white); color: var(--wy-black); }
+.btn-small { min-height: 44px; padding: 0.4rem 1rem; font-size: 0.95rem; }
+.actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.75rem; }
+.text-link { font-weight: 700; text-decoration: underline; text-decoration-color: var(--wy-red); text-decoration-thickness: 2px; text-underline-offset: 4px; }
+.text-link:hover { color: var(--wy-red); }
+
+/* ---------- sections ---------- */
+section, .section { padding-block: var(--wy-section); }
+.bg-light { background: var(--wy-light); }
+.on-dark { background: var(--wy-black); color: var(--wy-white); }
+.section-head { max-width: 46rem; margin-bottom: clamp(1.75rem, 4vw, 2.75rem); }
+.section-head p { margin-top: 1rem; }
+.split { display: grid; gap: clamp(1.75rem, 5vw, 4rem); align-items: center; grid-template-columns: 1fr 1fr; }
+.split.flip > :first-child { order: 2; }
+
+/* ---------- hero ---------- */
+.hero { background: var(--wy-light); padding-block: clamp(2rem, 6vw, 4.5rem); }
+.hero .split { grid-template-columns: 1.05fr 1fr; }
+.hero h1 { margin-bottom: 1.1rem; }
+.hero .note { margin-top: 1.25rem; font-size: 0.95rem; color: var(--wy-grey); max-width: 44ch; }
+.page-hero { background: var(--wy-light); padding-block: clamp(2.25rem, 6vw, 4.25rem); }
+.page-hero h1 { font-size: clamp(2rem, 6vw, 3.6rem); max-width: 18ch; margin-bottom: 1rem; }
+.page-hero.has-photo .split { grid-template-columns: 1.1fr 1fr; }
+.page-hero.has-photo h1 { max-width: none; }
+
+/* ---------- photo slots: replace by changing the src filename ---------- */
+.photo { position: relative; margin: 0; overflow: hidden; border-radius: 6px; background: #1c1c1c; aspect-ratio: var(--ratio, 16 / 10); }
+.photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 2; }
+.photo img[hidden] { display: none; }
+.slot-art {
+    position: absolute; inset: 0; z-index: 1;
+    background: #1c1c1c url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 100' preserveAspectRatio='xMidYMid slice'%3E%3Crect width='160' height='100' fill='%231c1c1c'/%3E%3Cg fill='none' stroke='%23444' stroke-width='1'%3E%3Crect x='30' y='8' width='70' height='92'/%3E%3Cpath d='M30 30h70M30 52h70M30 74h70M53 8v92M77 8v92'/%3E%3C/g%3E%3Cpath d='M112 100V14' stroke='%23d71920' stroke-width='2'/%3E%3Crect x='106' y='34' width='14' height='9' fill='%23d71920'/%3E%3C/svg%3E") center / cover no-repeat;
+}
+.slot-label { position: absolute; left: 0; right: 0; bottom: 0; z-index: 1; display: none; padding: 0.5rem 0.75rem; background: rgba(0, 0, 0, 0.72); color: #fff; font-size: 0.75rem; font-family: ui-monospace, Menlo, Consolas, monospace; }
+html.show-slot-labels .slot-label { display: block; }
+html.show-slot-labels .photo img:not([hidden]) ~ .slot-label { display: none; }
+.hero-art svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.hero-art .platform { animation: rise 1.6s .3s cubic-bezier(.3, .1, .2, 1) both; }
+@keyframes rise { from { transform: translateY(90px); } to { transform: translateY(0); } }
+
+/* ---------- components ---------- */
+.grid-2, .grid-3, .grid-4 { display: grid; gap: 1rem; }
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+.tile { display: flex; flex-direction: column; gap: 0.6rem; padding: 1.4rem; background: var(--wy-white); border: 1px solid var(--wy-border); border-radius: 4px; text-decoration: none; transition: border-color .18s ease, transform .18s ease; }
+a.tile:hover { border-color: var(--wy-red); transform: translateY(-3px); }
+.tile svg.ico { width: 34px; height: 34px; color: var(--wy-red); }
+.tile p { color: var(--wy-grey); font-size: 0.98rem; }
+.tile .more { margin-top: auto; padding-top: 0.5rem; font-weight: 700; text-decoration: underline; text-decoration-color: var(--wy-red); text-decoration-thickness: 2px; text-underline-offset: 4px; }
+.plain-tile { border-left: 4px solid var(--wy-red); background: var(--wy-white); padding: 1.1rem 1.25rem; }
+.bg-light .tile, .bg-light .plain-tile { background: var(--wy-white); }
+.ticks li { position: relative; padding: 0.55rem 0 0.55rem 2rem; border-bottom: 1px solid var(--wy-border); }
+.ticks li::before { content: ""; position: absolute; left: 0.1rem; top: 1rem; width: 0.9rem; height: 0.5rem; border-left: 3px solid var(--wy-red); border-bottom: 3px solid var(--wy-red); transform: rotate(-45deg) scale(.9); }
+.on-dark .ticks li { border-color: var(--wy-border-dark); }
+.steps { counter-reset: step; display: grid; gap: 1rem; grid-template-columns: repeat(5, 1fr); }
+.steps li { position: relative; counter-increment: step; padding: 3.1rem 0.25rem 0; }
+.steps li::before { content: counter(step); position: absolute; left: 0; top: 0; display: grid; place-items: center; width: 2.4rem; height: 2.4rem; border-radius: 50%; background: var(--wy-red); color: var(--wy-white); font-weight: 800; }
+.steps li::after { content: ""; position: absolute; left: 2.6rem; right: 0.4rem; top: 1.2rem; height: 2px; background: var(--wy-border); }
+.steps li:last-child::after { display: none; }
+.on-dark .steps li::after { background: var(--wy-border-dark); }
+.steps h3 { font-size: 1.05rem; margin-bottom: 0.3rem; }
+.steps p { font-size: 0.95rem; color: var(--wy-grey); }
+.on-dark .steps p { color: var(--wy-grey-on-dark); }
+.wit { margin-top: 1.75rem; padding-left: 1.1rem; border-left: 4px solid var(--wy-red); font-size: 1.25rem; font-weight: 700; font-stretch: 92%; line-height: 1.3; max-width: 36rem; }
+.info-card { border: 1px solid var(--wy-border); border-left: 4px solid var(--wy-red); padding: 1.25rem 1.4rem; background: var(--wy-white); }
+.info-card h3 { margin-bottom: 0.5rem; }
+.info-card p { color: var(--wy-grey); margin-bottom: 0.9rem; }
+.faq details { border-bottom: 1px solid var(--wy-border); }
+.faq summary { cursor: pointer; list-style: none; padding: 1.1rem 2.5rem 1.1rem 0; font-weight: 700; font-size: 1.1rem; position: relative; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; position: absolute; right: 0.4rem; top: 50%; transform: translateY(-50%); font-size: 1.6rem; font-weight: 400; color: var(--wy-red); transition: transform .2s ease; }
+.faq details[open] summary::after { transform: translateY(-50%) rotate(45deg); }
+.faq details p { padding: 0 2.5rem 1.2rem 0; color: var(--wy-grey); max-width: 62ch; }
+.cta-band { text-align: left; }
+.cta-band .actions { margin-top: 1.5rem; }
+
+/* ---------- forms ---------- */
+.field { display: grid; gap: 0.35rem; margin-bottom: 1.1rem; }
+.field label, .field legend { font-weight: 700; font-size: 0.98rem; }
+.field .help { font-size: 0.88rem; color: var(--wy-grey); }
+.field input, .field select, .field textarea { width: 100%; min-height: 48px; padding: 0.65rem 0.8rem; background: var(--wy-white); border: 2px solid #b9b9b4; border-radius: 4px; }
+.field textarea { min-height: 130px; resize: vertical; }
+.field input:focus, .field select:focus, .field textarea:focus { border-color: var(--wy-black); }
+.field [aria-invalid="true"] { border-color: var(--wy-red); }
+.field .err { color: var(--wy-red-dark); font-size: 0.9rem; font-weight: 600; min-height: 0; }
+.field.two { grid-template-columns: 1fr 1fr; gap: 1rem; }
+.field.two > div { display: grid; gap: 0.35rem; }
+fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
+fieldset legend { padding: 0; }
+.chips { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.chip { min-height: 48px; padding: 0.55rem 1rem; border: 2px solid var(--wy-black); border-radius: 999px; background: var(--wy-white); font-weight: 600; cursor: pointer; text-align: left; }
+.chip:hover { background: var(--wy-light); }
+.chip[aria-pressed="true"] { background: var(--wy-black); color: var(--wy-white); }
+.radio-row { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+.radio-row label { display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 600; min-height: 44px; }
+.radio-row input { width: 22px; height: 22px; min-height: 0; accent-color: var(--wy-red); }
+.status { margin-top: 1rem; padding: 0.9rem 1rem; background: var(--wy-white); border-left: 4px solid var(--wy-red); font-weight: 600; }
+.status[hidden] { display: none; }
+.summary-list { display: grid; gap: 0; margin: 0; }
+.summary-list div { display: grid; grid-template-columns: minmax(8rem, 40%) 1fr; gap: 1rem; padding: 0.55rem 0; border-bottom: 1px solid var(--wy-border); }
+.summary-list dt { color: var(--wy-grey); font-size: 0.95rem; }
+.summary-list dd { margin: 0; font-weight: 700; overflow-wrap: anywhere; }
+.contact-cols { display: grid; grid-template-columns: 1.25fr 1fr; gap: clamp(1.5rem, 4vw, 3.5rem); align-items: start; }
+.stack { display: grid; gap: 1.25rem; }
+.direct a.row { display: flex; align-items: center; gap: 0.9rem; min-height: 56px; padding: 0.7rem 1rem; border: 1px solid var(--wy-border); background: var(--wy-white); text-decoration: none; margin-bottom: 0.6rem; }
+.direct a.row:hover { border-color: var(--wy-red); }
+.direct small { display: block; color: var(--wy-grey); font-size: 0.82rem; }
+.direct strong { overflow-wrap: anywhere; }
+.address { font-style: normal; color: var(--wy-grey); line-height: 1.6; }
+
+/* ---------- planner dialog ---------- */
+dialog.planner { width: min(640px, 100vw); max-height: 100dvh; margin: auto; padding: 0; border: 0; border-radius: 8px; background: var(--wy-white); color: var(--wy-black); overflow: hidden; }
+dialog.planner::backdrop { background: rgba(0, 0, 0, 0.62); }
+dialog.planner[open] { display: flex; flex-direction: column; animation: pop .22s ease both; }
+@keyframes pop { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+.pl-head { display: flex; align-items: center; gap: 0.75rem; padding: 0.9rem 1.1rem; background: var(--wy-black); color: var(--wy-white); }
+.pl-head h2 { font-size: 1.15rem; }
+.pl-head p { font-size: 0.85rem; color: var(--wy-grey-on-dark); }
+.pl-close { margin-left: auto; width: 44px; height: 44px; flex: none; background: none; border: 1px solid var(--wy-border-dark); border-radius: 4px; color: #fff; font-size: 1.5rem; line-height: 1; cursor: pointer; }
+.pl-progress { height: 4px; background: var(--wy-border); }
+.pl-progress span { display: block; height: 100%; width: 0; background: var(--wy-red); transition: width .3s ease; }
+.pl-count { padding: 0.75rem 1.1rem 0; font-size: 0.88rem; color: var(--wy-grey); }
+.pl-body { padding: 0.5rem 1.1rem 1rem; overflow-y: auto; flex: 1; }
+.pl-body h3 { font-size: 1.5rem; margin: 0.4rem 0 1rem; font-stretch: 90%; }
+.pl-body .q { margin-bottom: 1.4rem; }
+.pl-body .q.main > legend { font-size: 1.5rem; font-stretch: 90%; margin-bottom: 1rem; }
+.pl-body .q > legend { font-weight: 800; font-size: 1.1rem; margin-bottom: 0.7rem; padding: 0; }
+.opts { display: grid; gap: 0.6rem; grid-template-columns: 1fr 1fr; }
+.opts.one { grid-template-columns: 1fr; }
+.opts.three { grid-template-columns: repeat(3, 1fr); }
+.opt { position: relative; }
+.opt input { position: absolute; opacity: 0; inset: 0; width: 100%; height: 100%; margin: 0; cursor: pointer; }
+.opt span { display: flex; align-items: center; min-height: 54px; padding: 0.6rem 0.9rem; border: 2px solid var(--wy-border); border-radius: 6px; font-weight: 600; background: var(--wy-white); transition: border-color .15s ease, background-color .15s ease; }
+.opts.three .opt span { justify-content: center; font-size: 1.05rem; }
+.opt:hover span { border-color: var(--wy-black); }
+.opt input:checked + span { background: var(--wy-black); border-color: var(--wy-black); color: var(--wy-white); box-shadow: inset 5px 0 0 var(--wy-red); }
+.opt input:focus-visible + span { outline: 3px solid var(--wy-red); outline-offset: 2px; }
+.pl-body .field input { min-height: 52px; }
+.hint { margin-top: 0.75rem; padding: 0.8rem 1rem; border-left: 4px solid var(--wy-red); background: var(--wy-light); font-weight: 600; }
+.hint:empty { display: none; }
+.pl-err { color: var(--wy-red-dark); font-weight: 700; margin-top: 0.5rem; min-height: 1.2em; }
+.pl-foot { display: flex; gap: 0.75rem; padding: 0.85rem 1.1rem; border-top: 1px solid var(--wy-border); background: var(--wy-white); }
+.pl-foot .btn { flex: 1; }
+.pl-foot .btn[hidden] { display: none; }
+.estimate { margin: 1.1rem 0; padding: 1rem 1.1rem; background: var(--wy-light); border-left: 4px solid var(--wy-red); }
+.estimate h4 { margin: 0 0 0.3rem; font-size: 1rem; }
+.estimate .figure { font-size: 1.25rem; font-weight: 800; }
+.estimate p { font-size: 0.9rem; color: var(--wy-grey); margin-top: 0.6rem; }
+.pl-ref { display: inline-block; padding: 0.25rem 0.6rem; background: var(--wy-black); color: #fff; font-weight: 700; font-size: 0.9rem; border-radius: 3px; letter-spacing: 0.02em; }
+.pl-actions { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1rem; }
+.pl-small { font-size: 0.88rem; color: var(--wy-grey); margin-top: 0.8rem; }
+
+/* ---------- footer + mobile actions ---------- */
+footer.site { background: var(--wy-black); color: var(--wy-grey-on-dark); padding-block: 3rem 2rem; }
+footer.site a { text-decoration: none; }
+footer.site a:hover { color: var(--wy-white); text-decoration: underline; }
+.foot-grid { display: grid; gap: 2rem; grid-template-columns: 1.4fr 1fr 1.2fr 0.8fr; }
+footer h2 { font-size: 0.95rem; color: var(--wy-white); margin-bottom: 0.8rem; font-stretch: 100%; }
+footer li { margin-bottom: 0.45rem; }
+footer .brand { color: var(--wy-white); margin-bottom: 0.8rem; }
+footer .legal { margin-top: 2.5rem; padding-top: 1.25rem; border-top: 1px solid var(--wy-border-dark); font-size: 0.88rem; }
+.mobile-actions { display: none; }
+#printSheet { display: none; }
+
+/* ---------- responsive ---------- */
+@media (max-width: 960px) {
+    .grid-4 { grid-template-columns: repeat(2, 1fr); }
+    .grid-3 { grid-template-columns: 1fr; }
+    .steps { grid-template-columns: 1fr; gap: 0.25rem; }
+    .steps li { padding: 0.15rem 0 1.25rem 3.3rem; min-height: 2.4rem; }
+    .steps li::after { left: 1.2rem; right: auto; top: 2.5rem; bottom: 0.15rem; width: 2px; height: auto; }
+    .foot-grid { grid-template-columns: 1fr 1fr; }
+    .contact-cols { grid-template-columns: 1fr; }
+}
+@media (min-width: 961px) {
+    .steps.vertical { grid-template-columns: 1fr; gap: 0.25rem; }
+    .steps.vertical li { padding: 0.15rem 0 1.25rem 3.3rem; min-height: 2.4rem; }
+    .steps.vertical li::after { left: 1.2rem; right: auto; top: 2.5rem; bottom: 0.15rem; width: 2px; height: auto; }
+}
+@media (max-width: 860px) {
+    :root { --wy-header: 60px; }
+    .burger { display: inline-flex; }
+    .nav { position: absolute; left: 0; right: 0; top: var(--wy-header); flex-direction: column; align-items: stretch; gap: 0; padding: 0.5rem var(--wy-gutter) 1rem; background: var(--wy-black); border-bottom: 1px solid var(--wy-border-dark); transform-origin: top; transform: scaleY(0); opacity: 0; visibility: hidden; transition: transform .2s ease, opacity .2s ease, visibility .2s; margin-left: 0; }
+    .nav.open { transform: none; opacity: 1; visibility: visible; }
+    .nav a, .nav button.nav-link { min-height: 52px; border-bottom: 1px solid var(--wy-border-dark); }
+    .lang { margin-left: auto; }
+    .split, .hero .split, .page-hero.has-photo .split { grid-template-columns: 1fr; }
+    .split.flip > :first-child { order: 0; }
+    .hero .photo, .page-hero .photo { order: -1; }
+    body { padding-bottom: 68px; }
+    .mobile-actions { display: grid; grid-template-columns: repeat(3, 1fr); position: fixed; left: 0; right: 0; bottom: 0; z-index: 90; background: var(--wy-black); border-top: 1px solid var(--wy-border-dark); }
+    .mobile-actions a, .mobile-actions button { display: flex; align-items: center; justify-content: center; gap: 0.4rem; min-height: 60px; border: 0; background: none; color: #fff; font-weight: 700; font-size: 0.95rem; text-decoration: none; cursor: pointer; }
+    .mobile-actions .go { background: var(--wy-red); }
+    dialog.planner { width: 100vw; max-width: none; height: 100dvh; max-height: 100dvh; border-radius: 0; }
+}
+@media (max-width: 560px) {
+    .grid-2, .grid-4 { grid-template-columns: 1fr; }
+    .field.two { grid-template-columns: 1fr; }
+    .foot-grid { grid-template-columns: 1fr; }
+    .opts, .opts.three { grid-template-columns: 1fr; }
+    .opts.three { grid-template-columns: repeat(3, 1fr); }
+    .actions .btn { flex: 1 1 100%; }
+    .summary-list div { grid-template-columns: 1fr; gap: 0.1rem; }
+}
+@media (max-width: 380px) {
+    .brand { font-size: 1.05rem; gap: 0.4rem; }
+    .brand svg { width: 26px; height: 26px; }
+    .lang button { min-width: 34px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+
+/* ---------- print: only the planning sheet (A4) ---------- */
+@page { size: A4; margin: 16mm; }
+@media print {
+    body { padding: 0; background: #fff; color: #000; }
+    body > *:not(#printSheet) { display: none !important; }
+    dialog { display: none !important; }
+    #printSheet { display: block !important; font-size: 11pt; line-height: 1.45; }
+    #printSheet h1 { font-size: 20pt; margin: 0 0 4pt; }
+    #printSheet .ps-brand { display: flex; align-items: center; justify-content: space-between; border-bottom: 3px solid #d71920; padding-bottom: 8pt; margin-bottom: 14pt; font-weight: 800; font-size: 15pt; }
+    #printSheet dl { margin: 10pt 0; }
+    #printSheet dl div { display: grid; grid-template-columns: 45mm 1fr; padding: 4pt 0; border-bottom: 0.5pt solid #999; }
+    #printSheet dt { color: #444; }
+    #printSheet dd { margin: 0; font-weight: 700; }
+    #printSheet .ps-notice { margin-top: 14pt; padding: 8pt; border: 1.5pt solid #000; font-weight: 700; }
+    #printSheet ul { list-style: disc; padding-left: 16pt; }
+    #printSheet h2 { font-size: 12pt; margin: 14pt 0 4pt; }
+    #printSheet .ps-contact { margin-top: 14pt; font-size: 10pt; }
+}
+
+</style>
+</head>
+<body data-page="services">
+<a class="skip" data-i18n="skip" href="#main">Aller au contenu</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+<symbol id="i-move" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M3 11l9-7 9 7v9H3z"/><path d="M9 20v-6h6v6"/></symbol>
+<symbol id="i-lift" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"><path d="M5 3v18M19 3v18"/><rect x="8" y="13" width="8" height="5"/><path d="M12 10V5m0 0l-2 2m2-2l2 2"/></symbol>
+<symbol id="i-truck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M2 6h11v10H2zM13 9h5l3 3v4h-8z"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></symbol>
+<symbol id="i-pro" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="1"/><path d="M9 7V4h6v3M3 13h18"/></symbol>
+<symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 005 5L15 12l5 2v4a2 2 0 01-2 2A16 16 0 013 5a2 2 0 012-2z"/></symbol>
+<symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/></symbol>
+<symbol id="i-route" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="18" r="2"/><circle cx="18" cy="6" r="2"/><path d="M8 18h6a3 3 0 000-6h-4a3 3 0 010-6h6"/></symbol>
+</defs></svg>
+<header class="site"><div class="wrap bar">
+<a class="brand" href="index.html" data-i18n-attr="aria-label:brand.home" aria-label="WouroYobi Lift, accueil"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect x="2" y="2" width="28" height="28" rx="4" fill="#d71920"/><path d="M16 7l8 9h-5v9h-6v-9H8z" fill="#fff"/></svg><span>WouroYobi Lift</span></a>
+<nav class="nav" id="siteNav" data-i18n-attr="aria-label:nav.aria" aria-label="Navigation principale">
+<a href="index.html"><span data-i18n="nav.home">Accueil</span></a>
+<a href="services.html" aria-current="page"><span data-i18n="nav.services">Services</span></a>
+<a href="monte-meubles.html"><span data-i18n="nav.lift">Monte-meubles</span></a>
+<button type="button" class="nav-link" data-open-planner><span data-i18n="nav.planner">Move Planner</span></button>
+<a href="contact.html"><span data-i18n="nav.contact">Contact</span></a>
+</nav>
+<div class="lang" role="group" data-i18n-attr="aria-label:lang.aria" aria-label="Choisir la langue">
+<button type="button" data-lang="fr" lang="fr" aria-pressed="true">FR</button>
+<button type="button" data-lang="nl" lang="nl" aria-pressed="false">NL</button>
+<button type="button" data-lang="en" lang="en" aria-pressed="false">EN</button>
+</div>
+<button type="button" class="burger" id="burger" aria-expanded="false" aria-controls="siteNav" data-i18n-attr="aria-label:nav.open" aria-label="Ouvrir le menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+</div></header>
+<main id="main">
+<section class="page-hero"><div class="wrap"><h1><span data-i18n="s.hero.title">Déménager, ce n'est pas seulement changer d'adresse.</span></h1><p class="lede"><span data-i18n="s.hero.text">Parfois, le plus difficile est de faire passer l'objet par le bâtiment. Voici comment WouroYobi Lift peut vous aider, selon votre situation.</span></p></div></section><section id="moving"><div class="wrap split">
+<div><svg class="ico" style="width:36px;height:36px;color:var(--wy-red);margin-bottom:.8rem" aria-hidden="true"><use href="#i-move"/></svg>
+<h2><span data-i18n="s.moving.title">Je déménage</span></h2><p class="lede" style="margin-top:1rem"><span data-i18n="s.moving.text">Appartement, maison ou logement : décrivez le départ, l'arrivée et les accès, et l'intervention s'organise avec vous.</span></p><ul class="ticks" style="margin-top:1.25rem"><li><span data-i18n="s.moving.1">Particuliers et professionnels</span></li><li><span data-i18n="s.moving.2">Appartements et maisons</span></li><li><span data-i18n="s.moving.3">Départ et arrivée à coordonner</span></li></ul><div class="actions"><button type="button" class="btn btn-primary" data-open-planner><span data-i18n="cta.plan">Planifier mon déménagement</span></button></div></div>
+<figure class="photo" style="--ratio:4/3"><div class="slot-art" aria-hidden="true"></div><img src="images/wouroyobi-moving-truck.jpg" data-i18n-attr="alt:alt.truck" alt="Camion de déménagement WouroYobi Lift" width="1600" height="1200" loading="lazy" decoding="async" style="object-position:center"><span class="slot-label" aria-hidden="true">Image slot: images/wouroyobi-moving-truck.jpg (4:3)</span></figure>
+</div></section><section id="lift" class="bg-light"><div class="wrap split flip">
+<div><svg class="ico" style="width:36px;height:36px;color:var(--wy-red);margin-bottom:.8rem" aria-hidden="true"><use href="#i-lift"/></svg>
+<h2><span data-i18n="s.lift.title">Mon meuble ne passe pas par l'escalier</span></h2><p class="lede" style="margin-top:1rem"><span data-i18n="s.lift.text">Le monte-meubles offre un passage extérieur pour les objets volumineux quand l'accès classique est difficile.</span></p><div class="actions"><a class="btn btn-dark" href="monte-meubles.html"><span data-i18n="s.lift.link">Tout savoir sur le monte-meubles</span></a></div></div>
+<figure class="photo" style="--ratio:4/3"><div class="slot-art" aria-hidden="true"></div><img src="images/wouroyobi-lift-platform.jpg" data-i18n-attr="alt:alt.lift" alt="Monte-meubles WouroYobi Lift en intervention" width="1600" height="1200" loading="lazy" decoding="async" style="object-position:center"><span class="slot-label" aria-hidden="true">Image slot: images/wouroyobi-lift-platform.jpg (4:3)</span></figure>
+</div></section><section id="transport"><div class="wrap split">
+<div><svg class="ico" style="width:36px;height:36px;color:var(--wy-red);margin-bottom:.8rem" aria-hidden="true"><use href="#i-truck"/></svg>
+<h2><span data-i18n="s.transport.title">J'ai des biens à transporter</span></h2><p class="lede" style="margin-top:1rem"><span data-i18n="s.transport.text">Transport, chargement et manutention de meubles et de matériel, à Bruxelles et alentours.</span></p><ul class="ticks" style="margin-top:1.25rem"><li><span data-i18n="s.transport.1">Meubles et matériel</span></li><li><span data-i18n="s.transport.2">Chargement et déchargement</span></li></ul><div class="actions"><a class="btn btn-outline" href="contact.html"><span data-i18n="cta.contact">Contacter WouroYobi</span></a></div></div>
+<figure class="photo" style="--ratio:4/3"><div class="slot-art" aria-hidden="true"></div><img src="images/wouroyobi-service.jpg" data-i18n-attr="alt:alt.service" alt="Service de transport et de manutention" width="1600" height="1200" loading="lazy" decoding="async" style="object-position:center"><span class="slot-label" aria-hidden="true">Image slot: images/wouroyobi-service.jpg (4:3)</span></figure>
+</div></section><section id="professional" class="bg-light"><div class="wrap split flip">
+<div><svg class="ico" style="width:36px;height:36px;color:var(--wy-red);margin-bottom:.8rem" aria-hidden="true"><use href="#i-pro"/></svg>
+<h2><span data-i18n="s.pro.title">Je contacte WouroYobi pour mon entreprise</span></h2><p class="lede" style="margin-top:1rem"><span data-i18n="s.pro.text">Bureaux, commerces, entreprises, fournisseurs de meubles, chantiers. Le levage extérieur peut aussi servir à déposer du matériel de construction sur une toiture.</span></p><ul class="ticks" style="margin-top:1.25rem"><li><span data-i18n="s.pro.1">Bureaux et commerces</span></li><li><span data-i18n="s.pro.2">Chantiers et rénovations</span></li><li><span data-i18n="s.pro.3">Fournisseurs de meubles</span></li></ul><div class="actions"><a class="btn btn-dark" href="contact.html"><span data-i18n="cta.contact">Contacter WouroYobi</span></a></div></div>
+<figure class="photo" style="--ratio:4/3"><div class="slot-art" aria-hidden="true"></div><img src="images/wouroyobi-lift-building.jpg" data-i18n-attr="alt:alt.building" alt="Immeuble concerné par une intervention de monte-meubles" width="1600" height="1200" loading="lazy" decoding="async" style="object-position:center"><span class="slot-label" aria-hidden="true">Image slot: images/wouroyobi-lift-building.jpg (4:3)</span></figure>
+</div></section><section class="on-dark cta-band"><div class="wrap"><div class="section-head" style="margin-bottom:0"><h2><span data-i18n="s.unsure.title">Pas sûr de ce qu'il vous faut ?</span></h2><p class="lede"><span data-i18n="s.unsure.text">C'est précisément à cela que sert le planificateur : quelques questions, puis un résumé que WouroYobi vérifie.</span></p>
+<div class="actions"><button type="button" class="btn btn-primary" data-open-planner><span data-i18n="cta.plan">Planifier mon déménagement</span></button><a class="btn btn-outline" href="monte-meubles.html"><span data-i18n="cta.lift">Découvrir le monte-meubles</span></a></div></div></div></section>
+</main>
+<footer class="site"><div class="wrap">
+<div class="foot-grid">
+<div><a class="brand" href="index.html" data-i18n-attr="aria-label:brand.home" aria-label="WouroYobi Lift, accueil"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect x="2" y="2" width="28" height="28" rx="4" fill="#d71920"/><path d="M16 7l8 9h-5v9h-6v-9H8z" fill="#fff"/></svg><span>WouroYobi Lift</span></a><p><span data-i18n="footer.tagline">Déménagement, monte-meubles, transport et manutention à Bruxelles et alentours.</span></p></div>
+<div><h2><span data-i18n="footer.nav">Navigation</span></h2><ul>
+<li><a href="index.html"><span data-i18n="nav.home">Accueil</span></a></li><li><a href="services.html"><span data-i18n="nav.services">Services</span></a></li><li><a href="monte-meubles.html"><span data-i18n="nav.lift">Monte-meubles</span></a></li><li><a href="contact.html"><span data-i18n="nav.contact">Contact</span></a></li>
+</ul></div>
+<div><h2><span data-i18n="footer.contact">Coordonnées</span></h2><ul>
+<li><span data-co-text="legal"></span></li>
+<li><address class="address" style="color:inherit" data-co-text="address"></address></li>
+<li><span data-i18n="label.vat">TVA</span> <span data-co-text="vat"></span></li>
+<li><a data-co="tel" href="#"><span data-co-text="phone"></span></a></li>
+<li><a data-co="mail" href="#"><span data-co-text="email"></span></a></li>
+</ul></div>
+<div><h2><span data-i18n="footer.lang">Langue</span></h2><div class="lang" role="group" data-i18n-attr="aria-label:lang.aria" aria-label="Choisir la langue">
+<button type="button" data-lang="fr" lang="fr" aria-pressed="true">FR</button><button type="button" data-lang="nl" lang="nl" aria-pressed="false">NL</button><button type="button" data-lang="en" lang="en" aria-pressed="false">EN</button></div></div>
+</div>
+<p class="legal">© 2026 <span data-i18n="footer.rights">WouroYobi Investment Company. Tous droits réservés.</span></p>
+</div></footer>
+<nav class="mobile-actions" data-i18n-attr="aria-label:mobile.aria" aria-label="Contact rapide">
+<a data-co="tel" href="#"><svg width="20" height="20"><use href="#i-phone"/></svg><span data-i18n="mobile.call">Appeler</span></a>
+<a data-co="wa" href="#" target="_blank" rel="noopener"><svg width="20" height="20"><use href="#i-chat"/></svg><span data-i18n="mobile.whatsapp">WhatsApp</span></a>
+<button type="button" class="go" data-open-planner><svg width="20" height="20"><use href="#i-route"/></svg><span data-i18n="cta.planShort">Planifier</span></button>
+</nav>
+<dialog class="planner" id="planner" aria-labelledby="plTitle">
+<div class="pl-head"><svg width="28" height="28" aria-hidden="true"><use href="#i-route"/></svg>
+<div><h2 id="plTitle"><span data-i18n="pl.title">Move Planner</span></h2><p><span data-i18n="pl.tagline">Votre déménagement, tracé d'avance.</span></p></div>
+<button type="button" class="pl-close" id="plClose" data-i18n-attr="aria-label:pl.close" aria-label="Fermer le planificateur"><span aria-hidden="true">&times;</span></button></div>
+<div class="pl-progress" aria-hidden="true"><span id="plBar"></span></div>
+<div class="pl-count" id="plCount" aria-live="polite"></div>
+<div class="pl-body" id="plBody"></div>
+<div class="pl-err" id="plError" role="alert" style="padding:0 1.1rem"></div>
+<div class="pl-foot">
+<button type="button" class="btn btn-outline" id="plBack" hidden><span data-i18n="pl.back">Retour</span></button>
+<button type="button" class="btn btn-primary" id="plNext"><span data-i18n="pl.next">Continuer</span></button></div>
+</dialog>
+<div id="printSheet" aria-hidden="true"></div>
+<script>
+/* =========================================================
+   WOUROYOBI LIFT — page behaviour
+   Identical block in all four pages. Sections:
+   CONFIGURATION · TRANSLATIONS · LANGUAGE SYSTEM · NAVIGATION ·
+   IMAGE SLOTS · COST ESTIMATION · MOVE PLANNER · PRINTING ·
+   FORM HANDLING · STRUCTURED DATA · FUTURE AI ENDPOINT · START
+   ========================================================= */
+
+// =========================
+// CONFIGURATION
+// Everything the owner may need to change lives in this section.
+// =========================
+const COMPANY = {
+    name: "WouroYobi Lift",
+    legalName: "WouroYobi Investment Company",
+    street: "Rue du Doyenné 16",
+    postalCode: "1180",
+    city: "Uccle",
+    country: { fr: "Belgique", nl: "België", en: "Belgium" },
+    vat: "BE1031009832",
+    phone: "+32466229403",
+    phoneDisplay: "+32 466 229 403",
+    whatsapp: "32466229403",
+    // UNCONFIRMED: this address comes from the supplied invoice. The promotional graphic shows
+    // info@wouroyobi-lift.be instead. Replace here once the owner confirms the operational mailbox.
+    email: "oummoulousmane@yahoo.com",
+    website: "https://wouroyobilift-bruxelles.be/",
+    roadGuideUrl: "https://www.bruxelles.be/osiris-autorisation-doccupation-temporaire-de-la-voie-publique"
+};
+
+// While real photographs are missing, empty image slots show their expected filename.
+// Set to false to hide the labels (slots then show a neutral dark block).
+const SHOW_IMAGE_SLOT_LABELS = true;
+
+// Future AI service (see FUTURE AI ENDPOINT below). null = planner stays fully deterministic.
+const AI_ENDPOINT = null;
+
+// =========================
+// TRANSLATIONS
+// =========================
+const translations = {
+    "fr": {
+        "skip": "Aller au contenu",
+        "nav.aria": "Navigation principale",
+        "nav.home": "Accueil",
+        "nav.services": "Services",
+        "nav.lift": "Monte-meubles",
+        "nav.planner": "Move Planner",
+        "nav.contact": "Contact",
+        "nav.open": "Ouvrir le menu",
+        "nav.close": "Fermer le menu",
+        "lang.aria": "Choisir la langue",
+        "brand.home": "WouroYobi Lift, accueil",
+        "cta.plan": "Planifier mon déménagement",
+        "cta.planShort": "Planifier",
+        "cta.services": "Découvrir nos services",
+        "cta.review": "Demander une vérification",
+        "cta.contact": "Contacter WouroYobi",
+        "cta.lift": "Découvrir le monte-meubles",
+        "cta.startPlanner": "Démarrer le planificateur",
+        "cta.more": "En savoir plus",
+        "mobile.aria": "Contact rapide",
+        "mobile.call": "Appeler",
+        "mobile.whatsapp": "WhatsApp",
+        "label.phone": "Téléphone",
+        "label.email": "E-mail",
+        "label.whatsapp": "WhatsApp",
+        "label.address": "Adresse",
+        "label.vat": "TVA",
+        "footer.tagline": "Déménagement, monte-meubles, transport et manutention à Bruxelles et alentours.",
+        "footer.nav": "Navigation",
+        "footer.contact": "Coordonnées",
+        "footer.lang": "Langue",
+        "footer.rights": "WouroYobi Investment Company. Tous droits réservés.",
+        "alt.lift": "Monte-meubles WouroYobi Lift en intervention",
+        "alt.building": "Immeuble concerné par une intervention de monte-meubles",
+        "alt.truck": "Camion de déménagement WouroYobi Lift",
+        "alt.service": "Service de transport et de manutention",
+        "pl.title": "Move Planner",
+        "pl.tagline": "Votre déménagement, tracé d'avance.",
+        "pl.intro": "Quelques questions courtes. Vous obtenez un résumé que WouroYobi vérifie avant de confirmer le devis.",
+        "pl.close": "Fermer le planificateur",
+        "pl.back": "Retour",
+        "pl.next": "Continuer",
+        "pl.progress": "Étape {n} sur {total}",
+        "pl.err.choose": "Choisissez une option pour continuer.",
+        "pl.err.date": "La date ne peut pas être dans le passé.",
+        "pl.q.type": "Que déplacez-vous ?",
+        "pl.type.apartment": "Un appartement",
+        "pl.type.house": "Une maison",
+        "pl.type.office": "Un bureau ou un local professionnel",
+        "pl.type.furniture": "Des meubles seulement",
+        "pl.type.other": "Autre chose",
+        "pl.q.floor": "À quel étage ?",
+        "pl.floor.0": "RDC",
+        "pl.floor.8": "8 et +",
+        "pl.q.lift": "L'immeuble a-t-il un ascenseur ?",
+        "pl.yes": "Oui",
+        "pl.no": "Non",
+        "pl.unsure": "Je ne sais pas",
+        "pl.hint.lift": "C'est exactement le genre de situation pour laquelle un monte-meubles est conçu.",
+        "pl.q.access": "Comment est l'accès ?",
+        "pl.access.easy": "Facile",
+        "pl.access.tight": "Étroit",
+        "pl.access.difficult": "Difficile",
+        "pl.q.parking": "Où le camion peut-il s'arrêter ?",
+        "pl.park.free": "Il y a de la place devant l'immeuble",
+        "pl.park.tight": "Rue étroite ou stationnement compliqué",
+        "pl.hint.access": "Pas de souci : WouroYobi examine l'accès avant toute intervention.",
+        "pl.q.service": "De quoi avez-vous besoin ?",
+        "pl.svc.moving": "Un déménagement",
+        "pl.svc.lift": "Un monte-meubles",
+        "pl.svc.transport": "Du transport",
+        "pl.svc.combined": "Déménagement + monte-meubles",
+        "pl.svc.unsure": "Je ne suis pas sûr",
+        "pl.hint.service": "Aucun problème : décrivez votre situation, WouroYobi vous conseillera.",
+        "pl.q.when": "Où et quand ?",
+        "pl.origin": "Départ (commune)",
+        "pl.destination": "Arrivée (commune)",
+        "pl.optional": "facultatif",
+        "pl.date": "Date souhaitée",
+        "pl.dateFlex": "Ma date est…",
+        "pl.flex.flexible": "Flexible",
+        "pl.flex.fixed": "Fixe",
+        "pl.q.summary": "Votre résumé de planification",
+        "pl.ref": "Référence",
+        "pl.row.type": "Type de déplacement",
+        "pl.row.floor": "Étage",
+        "pl.row.lift": "Ascenseur dans l'immeuble",
+        "pl.row.access": "Accès",
+        "pl.row.parking": "Stationnement",
+        "pl.row.service": "Service",
+        "pl.row.origin": "Départ",
+        "pl.row.destination": "Arrivée",
+        "pl.row.date": "Date souhaitée",
+        "pl.notProvided": "Non précisé",
+        "pl.est.title": "Estimation de planification",
+        "pl.est.pending": "Estimation préparée : vérification par WouroYobi requise",
+        "pl.est.range": "Fourchette indicative",
+        "pl.est.disclaimer": "Cette estimation sert à la planification. Le service et le prix final sont confirmés après vérification par WouroYobi des conditions d'accès, des besoins et de la date demandée.",
+        "pl.print": "Imprimer ma fiche",
+        "pl.restart": "Recommencer",
+        "pl.handoff": "Le résumé sera repris dans votre demande de contact. Rien n'est envoyé tant que vous ne validez pas.",
+        "print.title": "Fiche de planification",
+        "print.date": "Date d'édition",
+        "print.notice": "Document de planification : ni devis définitif, ni contrat.",
+        "print.assumptions": "Hypothèses",
+        "print.a1": "Les informations ci-dessus sont celles saisies par le visiteur et n'ont pas été vérifiées.",
+        "print.a2": "La faisabilité d'un monte-meubles dépend du bâtiment, de l'accès et d'une évaluation par WouroYobi.",
+        "print.a3": "L'occupation de la voie publique peut nécessiter une autorisation communale.",
+        "meta.title": "Services | Déménagement, Monte-Meubles, Transport | WouroYobi Lift",
+        "meta.description": "Déménagement, monte-meubles, transport et manutention pour particuliers et professionnels à Bruxelles et alentours. Trouvez le service adapté à votre situation.",
+        "s.hero.title": "Déménager, ce n'est pas seulement changer d'adresse.",
+        "s.hero.text": "Parfois, le plus difficile est de faire passer l'objet par le bâtiment. Voici comment WouroYobi Lift peut vous aider, selon votre situation.",
+        "s.moving.title": "Je déménage",
+        "s.moving.text": "Appartement, maison ou logement : décrivez le départ, l'arrivée et les accès, et l'intervention s'organise avec vous.",
+        "s.moving.1": "Particuliers et professionnels",
+        "s.moving.2": "Appartements et maisons",
+        "s.moving.3": "Départ et arrivée à coordonner",
+        "s.lift.title": "Mon meuble ne passe pas par l'escalier",
+        "s.lift.text": "Le monte-meubles offre un passage extérieur pour les objets volumineux quand l'accès classique est difficile.",
+        "s.lift.link": "Tout savoir sur le monte-meubles",
+        "s.transport.title": "J'ai des biens à transporter",
+        "s.transport.text": "Transport, chargement et manutention de meubles et de matériel, à Bruxelles et alentours.",
+        "s.transport.1": "Meubles et matériel",
+        "s.transport.2": "Chargement et déchargement",
+        "s.pro.title": "Je contacte WouroYobi pour mon entreprise",
+        "s.pro.text": "Bureaux, commerces, entreprises, fournisseurs de meubles, chantiers. Le levage extérieur peut aussi servir à déposer du matériel de construction sur une toiture.",
+        "s.pro.1": "Bureaux et commerces",
+        "s.pro.2": "Chantiers et rénovations",
+        "s.pro.3": "Fournisseurs de meubles",
+        "s.unsure.title": "Pas sûr de ce qu'il vous faut ?",
+        "s.unsure.text": "C'est précisément à cela que sert le planificateur : quelques questions, puis un résumé que WouroYobi vérifie."
+    },
+    "nl": {
+        "skip": "Ga naar de inhoud",
+        "nav.aria": "Hoofdnavigatie",
+        "nav.home": "Home",
+        "nav.services": "Diensten",
+        "nav.lift": "Verhuislift",
+        "nav.planner": "Move Planner",
+        "nav.contact": "Contact",
+        "nav.open": "Menu openen",
+        "nav.close": "Menu sluiten",
+        "lang.aria": "Taal kiezen",
+        "brand.home": "WouroYobi Lift, home",
+        "cta.plan": "Mijn verhuizing plannen",
+        "cta.planShort": "Plannen",
+        "cta.services": "Onze diensten bekijken",
+        "cta.review": "Een controle aanvragen",
+        "cta.contact": "Contact opnemen met WouroYobi",
+        "cta.lift": "De verhuislift ontdekken",
+        "cta.startPlanner": "De planner starten",
+        "cta.more": "Meer weten",
+        "mobile.aria": "Snel contact",
+        "mobile.call": "Bellen",
+        "mobile.whatsapp": "WhatsApp",
+        "label.phone": "Telefoon",
+        "label.email": "E-mail",
+        "label.whatsapp": "WhatsApp",
+        "label.address": "Adres",
+        "label.vat": "BTW",
+        "footer.tagline": "Verhuizing, verhuislift, transport en hantering in Brussel en omgeving.",
+        "footer.nav": "Navigatie",
+        "footer.contact": "Contactgegevens",
+        "footer.lang": "Taal",
+        "footer.rights": "WouroYobi Investment Company. Alle rechten voorbehouden.",
+        "alt.lift": "WouroYobi Lift verhuislift in actie",
+        "alt.building": "Gebouw waar een verhuislift wordt ingezet",
+        "alt.truck": "Verhuiswagen van WouroYobi Lift",
+        "alt.service": "Transport- en hanteringsdienst",
+        "pl.title": "Move Planner",
+        "pl.tagline": "Uw verhuizing, vooraf uitgestippeld.",
+        "pl.intro": "Enkele korte vragen. U krijgt een samenvatting die WouroYobi controleert voordat de offerte wordt bevestigd.",
+        "pl.close": "Planner sluiten",
+        "pl.back": "Terug",
+        "pl.next": "Verder",
+        "pl.progress": "Stap {n} van {total}",
+        "pl.err.choose": "Kies een optie om verder te gaan.",
+        "pl.err.date": "De datum mag niet in het verleden liggen.",
+        "pl.q.type": "Wat verplaatst u?",
+        "pl.type.apartment": "Een appartement",
+        "pl.type.house": "Een huis",
+        "pl.type.office": "Een kantoor of bedrijfsruimte",
+        "pl.type.furniture": "Enkel meubels",
+        "pl.type.other": "Iets anders",
+        "pl.q.floor": "Op welke verdieping?",
+        "pl.floor.0": "BG",
+        "pl.floor.8": "8 en +",
+        "pl.q.lift": "Heeft het gebouw een lift?",
+        "pl.yes": "Ja",
+        "pl.no": "Nee",
+        "pl.unsure": "Ik weet het niet",
+        "pl.hint.lift": "Dat is precies het soort situatie waarvoor een verhuislift bedoeld is.",
+        "pl.q.access": "Hoe is de toegang?",
+        "pl.access.easy": "Makkelijk",
+        "pl.access.tight": "Krap",
+        "pl.access.difficult": "Moeilijk",
+        "pl.q.parking": "Waar kan de vrachtwagen stilstaan?",
+        "pl.park.free": "Er is plaats voor het gebouw",
+        "pl.park.tight": "Smalle straat of moeilijk parkeren",
+        "pl.hint.access": "Geen zorgen: WouroYobi bekijkt de toegang voor elke interventie.",
+        "pl.q.service": "Wat hebt u nodig?",
+        "pl.svc.moving": "Een verhuizing",
+        "pl.svc.lift": "Een verhuislift",
+        "pl.svc.transport": "Transport",
+        "pl.svc.combined": "Verhuizing + verhuislift",
+        "pl.svc.unsure": "Ik ben er niet zeker van",
+        "pl.hint.service": "Geen probleem: beschrijf uw situatie, WouroYobi adviseert u.",
+        "pl.q.when": "Waar en wanneer?",
+        "pl.origin": "Vertrek (gemeente)",
+        "pl.destination": "Aankomst (gemeente)",
+        "pl.optional": "optioneel",
+        "pl.date": "Gewenste datum",
+        "pl.dateFlex": "Mijn datum is…",
+        "pl.flex.flexible": "Flexibel",
+        "pl.flex.fixed": "Vast",
+        "pl.q.summary": "Uw planningsoverzicht",
+        "pl.ref": "Referentie",
+        "pl.row.type": "Soort verplaatsing",
+        "pl.row.floor": "Verdieping",
+        "pl.row.lift": "Lift in het gebouw",
+        "pl.row.access": "Toegang",
+        "pl.row.parking": "Parkeren",
+        "pl.row.service": "Dienst",
+        "pl.row.origin": "Vertrek",
+        "pl.row.destination": "Aankomst",
+        "pl.row.date": "Gewenste datum",
+        "pl.notProvided": "Niet opgegeven",
+        "pl.est.title": "Planningsschatting",
+        "pl.est.pending": "Schatting opgesteld: controle door WouroYobi vereist",
+        "pl.est.range": "Indicatief bereik",
+        "pl.est.disclaimer": "Deze schatting dient voor de planning. De dienst en de eindprijs worden bevestigd nadat WouroYobi de toegangsvoorwaarden, de noden en de gevraagde datum heeft gecontroleerd.",
+        "pl.print": "Mijn fiche afdrukken",
+        "pl.restart": "Opnieuw beginnen",
+        "pl.handoff": "Het overzicht wordt overgenomen in uw contactaanvraag. Er wordt niets verstuurd zolang u niet bevestigt.",
+        "print.title": "Planningsfiche",
+        "print.date": "Datum van opmaak",
+        "print.notice": "Planningsdocument: geen definitieve offerte en geen contract.",
+        "print.assumptions": "Veronderstellingen",
+        "print.a1": "De bovenstaande gegevens werden door de bezoeker ingevuld en zijn niet gecontroleerd.",
+        "print.a2": "De haalbaarheid van een verhuislift hangt af van het gebouw, de toegang en een beoordeling door WouroYobi.",
+        "print.a3": "Het innemen van de openbare weg kan een gemeentelijke toelating vereisen.",
+        "meta.title": "Diensten | Verhuizing, Verhuislift, Transport | WouroYobi Lift",
+        "meta.description": "Verhuizing, verhuislift, transport en hantering voor particulieren en professionals in Brussel en omgeving. Vind de dienst die bij uw situatie past.",
+        "s.hero.title": "Verhuizen is meer dan van adres veranderen.",
+        "s.hero.text": "Soms is het moeilijkste om het voorwerp door het gebouw te krijgen. Zo kan WouroYobi Lift u helpen, afhankelijk van uw situatie.",
+        "s.moving.title": "Ik ga verhuizen",
+        "s.moving.text": "Appartement, huis of woning: beschrijf het vertrek, de aankomst en de toegang, en de interventie wordt samen met u georganiseerd.",
+        "s.moving.1": "Particulieren en professionals",
+        "s.moving.2": "Appartementen en huizen",
+        "s.moving.3": "Vertrek en aankomst af te stemmen",
+        "s.lift.title": "Mijn meubel past niet door het traphuis",
+        "s.lift.text": "De verhuislift biedt een route langs buiten voor volumineuze voorwerpen wanneer de gewone toegang moeilijk is.",
+        "s.lift.link": "Alles over de verhuislift",
+        "s.transport.title": "Ik heb goederen te vervoeren",
+        "s.transport.text": "Transport, laden en hanteren van meubels en materiaal, in Brussel en omgeving.",
+        "s.transport.1": "Meubels en materiaal",
+        "s.transport.2": "Laden en lossen",
+        "s.pro.title": "Ik neem contact op voor mijn bedrijf",
+        "s.pro.text": "Kantoren, winkels, bedrijven, meubelleveranciers, werven. Het buitenlift kan ook dienen om bouwmateriaal op een dak te plaatsen.",
+        "s.pro.1": "Kantoren en winkels",
+        "s.pro.2": "Werven en renovaties",
+        "s.pro.3": "Meubelleveranciers",
+        "s.unsure.title": "Niet zeker wat u nodig hebt?",
+        "s.unsure.text": "Daar dient de planner voor: enkele vragen, dan een overzicht dat WouroYobi controleert."
+    },
+    "en": {
+        "skip": "Skip to content",
+        "nav.aria": "Main navigation",
+        "nav.home": "Home",
+        "nav.services": "Services",
+        "nav.lift": "Furniture lift",
+        "nav.planner": "Move Planner",
+        "nav.contact": "Contact",
+        "nav.open": "Open menu",
+        "nav.close": "Close menu",
+        "lang.aria": "Choose language",
+        "brand.home": "WouroYobi Lift, home",
+        "cta.plan": "Plan my move",
+        "cta.planShort": "Plan",
+        "cta.services": "Explore our services",
+        "cta.review": "Request a review",
+        "cta.contact": "Contact WouroYobi",
+        "cta.lift": "Discover the furniture lift",
+        "cta.startPlanner": "Start the Move Planner",
+        "cta.more": "Learn more",
+        "mobile.aria": "Quick contact",
+        "mobile.call": "Call",
+        "mobile.whatsapp": "WhatsApp",
+        "label.phone": "Phone",
+        "label.email": "Email",
+        "label.whatsapp": "WhatsApp",
+        "label.address": "Address",
+        "label.vat": "VAT",
+        "footer.tagline": "Moving, furniture lift, transport and handling in Brussels and surrounding areas.",
+        "footer.nav": "Navigation",
+        "footer.contact": "Contact details",
+        "footer.lang": "Language",
+        "footer.rights": "WouroYobi Investment Company. All rights reserved.",
+        "alt.lift": "WouroYobi Lift furniture lift at work",
+        "alt.building": "Building served by a furniture lift",
+        "alt.truck": "WouroYobi Lift moving truck",
+        "alt.service": "Transport and handling service",
+        "pl.title": "Move Planner",
+        "pl.tagline": "Your move, mapped out.",
+        "pl.intro": "A few short questions. You get a summary that WouroYobi reviews before confirming the quote.",
+        "pl.close": "Close the planner",
+        "pl.back": "Back",
+        "pl.next": "Continue",
+        "pl.progress": "Step {n} of {total}",
+        "pl.err.choose": "Choose an option to continue.",
+        "pl.err.date": "The date cannot be in the past.",
+        "pl.q.type": "What are you moving?",
+        "pl.type.apartment": "An apartment",
+        "pl.type.house": "A house",
+        "pl.type.office": "An office or business premises",
+        "pl.type.furniture": "Furniture only",
+        "pl.type.other": "Something else",
+        "pl.q.floor": "Which floor?",
+        "pl.floor.0": "Ground",
+        "pl.floor.8": "8+",
+        "pl.q.lift": "Does the building have an elevator?",
+        "pl.yes": "Yes",
+        "pl.no": "No",
+        "pl.unsure": "Not sure",
+        "pl.hint.lift": "That is exactly the kind of situation a furniture lift is designed for.",
+        "pl.q.access": "How easy is access?",
+        "pl.access.easy": "Easy",
+        "pl.access.tight": "Tight",
+        "pl.access.difficult": "Difficult",
+        "pl.q.parking": "Where can the truck stop?",
+        "pl.park.free": "There is space in front of the building",
+        "pl.park.tight": "Narrow street or difficult parking",
+        "pl.hint.access": "No problem: WouroYobi reviews access before any operation.",
+        "pl.q.service": "What do you need?",
+        "pl.svc.moving": "A move",
+        "pl.svc.lift": "A furniture lift",
+        "pl.svc.transport": "Transport",
+        "pl.svc.combined": "Move + furniture lift",
+        "pl.svc.unsure": "I'm not sure",
+        "pl.hint.service": "No problem: describe your situation and WouroYobi will advise.",
+        "pl.q.when": "Where and when?",
+        "pl.origin": "From (municipality)",
+        "pl.destination": "To (municipality)",
+        "pl.optional": "optional",
+        "pl.date": "Preferred date",
+        "pl.dateFlex": "My date is…",
+        "pl.flex.flexible": "Flexible",
+        "pl.flex.fixed": "Fixed",
+        "pl.q.summary": "Your planning summary",
+        "pl.ref": "Reference",
+        "pl.row.type": "Move type",
+        "pl.row.floor": "Floor",
+        "pl.row.lift": "Building elevator",
+        "pl.row.access": "Access",
+        "pl.row.parking": "Parking",
+        "pl.row.service": "Service",
+        "pl.row.origin": "From",
+        "pl.row.destination": "To",
+        "pl.row.date": "Preferred date",
+        "pl.notProvided": "Not provided",
+        "pl.est.title": "Planning estimate",
+        "pl.est.pending": "Estimate prepared: review by WouroYobi required",
+        "pl.est.range": "Indicative range",
+        "pl.est.disclaimer": "This estimate is for planning purposes. The final service and price are confirmed after WouroYobi reviews the access conditions, requirements and requested date.",
+        "pl.print": "Print my planning sheet",
+        "pl.restart": "Start again",
+        "pl.handoff": "The summary will carry over to your contact request. Nothing is sent until you confirm.",
+        "print.title": "Planning sheet",
+        "print.date": "Date issued",
+        "print.notice": "Planning document: not a final quotation or contract.",
+        "print.assumptions": "Assumptions",
+        "print.a1": "The details above were entered by the visitor and have not been verified.",
+        "print.a2": "Furniture-lift suitability depends on the building, access and an assessment by WouroYobi.",
+        "print.a3": "Occupying the public road may require municipal authorisation.",
+        "meta.title": "Services | Moving, Furniture Lift, Transport | WouroYobi Lift",
+        "meta.description": "Moving, furniture lift, transport and handling for private and professional customers in Brussels and surrounding areas. Find the service that fits your situation.",
+        "s.hero.title": "Moving is not only about changing address.",
+        "s.hero.text": "Sometimes the hard part is getting the object through the building. Here is how WouroYobi Lift can help, depending on your situation.",
+        "s.moving.title": "I'm moving",
+        "s.moving.text": "Apartment, house or home: describe the start, the destination and the access, and the job is organised with you.",
+        "s.moving.1": "Private and professional customers",
+        "s.moving.2": "Apartments and houses",
+        "s.moving.3": "Start and destination to coordinate",
+        "s.lift.title": "My furniture won't go up the stairs",
+        "s.lift.text": "The furniture lift provides an outside route for bulky items when conventional access is difficult.",
+        "s.lift.link": "All about the furniture lift",
+        "s.transport.title": "I have goods to transport",
+        "s.transport.text": "Transport, loading and handling of furniture and equipment, in Brussels and surrounding areas.",
+        "s.transport.1": "Furniture and equipment",
+        "s.transport.2": "Loading and unloading",
+        "s.pro.title": "I'm contacting WouroYobi for a business",
+        "s.pro.text": "Offices, shops, businesses, furniture suppliers, building sites. The outside lift can also be used to place construction materials on a roof.",
+        "s.pro.1": "Offices and shops",
+        "s.pro.2": "Building sites and renovations",
+        "s.pro.3": "Furniture suppliers",
+        "s.unsure.title": "Not sure what you need?",
+        "s.unsure.text": "That is exactly what the planner is for: a few questions, then a summary that WouroYobi reviews."
+    }
+};
+
+// =========================
+// LANGUAGE SYSTEM
+// =========================
+const SUPPORTED_LANGS = ["fr", "nl", "en"];
+const DEFAULT_LANG = "fr";
+const LANG_STORAGE_KEY = "wyl.lang";
+const HTML_LANG = { fr: "fr-BE", nl: "nl-BE", en: "en" };
+const OG_LOCALE = { fr: "fr_BE", nl: "nl_BE", en: "en_GB" };
+let currentLang = DEFAULT_LANG;
+
+function storageGet(key) {
+    try { return window.localStorage.getItem(key); } catch (e) { return null; }
+}
+function storageSet(key, value) {
+    try { window.localStorage.setItem(key, value); } catch (e) { /* storage unavailable: preference simply is not kept */ }
+}
+
+// Compares FR/NL/EN key sets and reports problems in the console (development aid).
+function checkTranslations() {
+    const reference = Object.keys(translations[DEFAULT_LANG]);
+    SUPPORTED_LANGS.forEach(function (lang) {
+        const keys = Object.keys(translations[lang]);
+        const missing = reference.filter(function (k) { return !(k in translations[lang]); });
+        const extra = keys.filter(function (k) { return !(k in translations[DEFAULT_LANG]); });
+        if (missing.length) console.error("[i18n] " + lang + " is missing keys:", missing);
+        if (extra.length) console.error("[i18n] " + lang + " has keys unknown to " + DEFAULT_LANG + ":", extra);
+    });
+    document.querySelectorAll("[data-i18n], [data-i18n-html]").forEach(function (el) {
+        const key = el.dataset.i18n || el.dataset.i18nHtml;
+        if (!(key in translations[DEFAULT_LANG])) console.error("[i18n] unknown key in markup:", key);
+    });
+}
+
+function detectLanguage() {
+    const stored = storageGet(LANG_STORAGE_KEY);
+    if (SUPPORTED_LANGS.indexOf(stored) !== -1) return stored;
+    const tags = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language];
+    for (const tag of tags) {
+        const prefix = String(tag || "").toLowerCase().slice(0, 2);
+        if (SUPPORTED_LANGS.indexOf(prefix) !== -1) return prefix;
+    }
+    return DEFAULT_LANG;
+}
+
+function t(key, vars) {
+    const text = translations[currentLang][key];
+    if (text === undefined) throw new Error("Missing translation key: " + key);
+    return vars ? text.replace(/\{(\w+)\}/g, function (m, name) { return vars[name]; }) : text;
+}
+
+function applyLanguage(lang) {
+    currentLang = lang;
+    document.documentElement.lang = HTML_LANG[lang];
+
+    document.querySelectorAll("[data-i18n]").forEach(function (el) { el.textContent = t(el.dataset.i18n); });
+    document.querySelectorAll("[data-i18n-html]").forEach(function (el) { el.innerHTML = t(el.dataset.i18nHtml); });
+    document.querySelectorAll("[data-i18n-attr]").forEach(function (el) {
+        el.dataset.i18nAttr.split(";").forEach(function (pair) {
+            const parts = pair.split(":");
+            el.setAttribute(parts[0], t(parts[1]));
+        });
+    });
+
+    document.title = t("meta.title");
+    setMeta('meta[name="description"]', t("meta.description"));
+    setMeta('meta[property="og:title"]', t("meta.title"));
+    setMeta('meta[property="og:description"]', t("meta.description"));
+    setMeta('meta[property="og:locale"]', OG_LOCALE[lang]);
+
+    document.querySelectorAll(".lang button").forEach(function (button) {
+        button.setAttribute("aria-pressed", String(button.dataset.lang === lang));
+    });
+    updateBurgerLabel();
+    renderCompany();
+    document.dispatchEvent(new CustomEvent("wyl:langchange"));
+}
+
+function setMeta(selector, value) {
+    const el = document.querySelector(selector);
+    if (el) el.setAttribute("content", value);
+}
+
+function initLanguageSwitch() {
+    document.querySelectorAll(".lang button").forEach(function (button) {
+        button.addEventListener("click", function () {
+            storageSet(LANG_STORAGE_KEY, button.dataset.lang);
+            applyLanguage(button.dataset.lang);
+        });
+    });
+}
+
+// Fills every place that shows company details from the COMPANY object above.
+function renderCompany() {
+    document.querySelectorAll("[data-co]").forEach(function (el) {
+        const kind = el.dataset.co;
+        if (kind === "tel") el.href = "tel:" + COMPANY.phone;
+        if (kind === "wa") el.href = "https://wa.me/" + COMPANY.whatsapp;
+        if (kind === "mail") el.href = "mailto:" + COMPANY.email;
+        if (kind === "road") el.href = COMPANY.roadGuideUrl;
+    });
+    document.querySelectorAll("[data-co-text]").forEach(function (el) {
+        const kind = el.dataset.coText;
+        if (kind === "phone") el.textContent = COMPANY.phoneDisplay;
+        if (kind === "email") el.textContent = COMPANY.email;
+        if (kind === "vat") el.textContent = COMPANY.vat;
+        if (kind === "legal") el.textContent = COMPANY.legalName;
+        if (kind === "address") {
+            el.textContent = "";
+            [COMPANY.street, COMPANY.postalCode + " " + COMPANY.city + ", " + COMPANY.country[currentLang]].forEach(function (line, index) {
+                if (index) el.appendChild(document.createElement("br"));
+                el.appendChild(document.createTextNode(line));
+            });
+        }
+    });
+}
+
+// =========================
+// NAVIGATION
+// =========================
+const navList = document.getElementById("siteNav");
+const burger = document.getElementById("burger");
+
+function setMenu(open) {
+    navList.classList.toggle("open", open);
+    burger.setAttribute("aria-expanded", String(open));
+    updateBurgerLabel();
+}
+function updateBurgerLabel() {
+    const open = navList.classList.contains("open");
+    burger.setAttribute("aria-label", t(open ? "nav.close" : "nav.open"));
+}
+function initNavigation() {
+    burger.addEventListener("click", function () { setMenu(!navList.classList.contains("open")); });
+    navList.querySelectorAll("a, button").forEach(function (item) {
+        item.addEventListener("click", function () { setMenu(false); });
+    });
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape" && navList.classList.contains("open")) { setMenu(false); burger.focus(); }
+    });
+}
+
+// =========================
+// IMAGE SLOTS
+// A missing photograph hides its <img>; the slot then shows its placeholder.
+// Replacing a photograph = putting the file with the expected name in /images/.
+// =========================
+function initImageSlots() {
+    document.documentElement.classList.toggle("show-slot-labels", SHOW_IMAGE_SLOT_LABELS);
+    document.querySelectorAll(".photo img").forEach(function (img) {
+        img.addEventListener("error", function () { img.hidden = true; });
+        if (img.complete && img.naturalWidth === 0 && img.currentSrc) img.hidden = true;
+    });
+}
+
+// =========================
+// COST ESTIMATION
+// Deterministic. No values are invented: every figure must come from WouroYobi.
+// To activate the estimate: fill each entry below as { min: <euros>, max: <euros> }
+// and set configured to true. Until then the planner shows "review required".
+// =========================
+const pricingConfig = {
+    configured: false,                 // PLACEHOLDER: set to true only when ALL values below are supplied
+    currency: "EUR",
+    // Floor bands used by floorBand(): ground = 0, low = 1-2, mid = 3-4, high = 5 and above
+    floorBandLimits: { low: 2, mid: 4 },
+    serviceBase:  { moving: null, lift: null, transport: null, combined: null, unsure: null },
+    propertyType: { apartment: null, house: null, office: null, furniture: null, other: null },
+    floorBand:    { ground: null, low: null, mid: null, high: null },
+    access:       { easy: null, tight: null, difficult: null, unsure: null },
+    parking:      { free: null, tight: null, unsure: null },
+    buildingLift: { yes: null, no: null, unsure: null }
+};
+
+function floorBand(floor) {
+    if (floor === 0) return "ground";
+    if (floor <= pricingConfig.floorBandLimits.low) return "low";
+    if (floor <= pricingConfig.floorBandLimits.mid) return "mid";
+    return "high";
+}
+
+function computeEstimate(plan) {
+    if (!pricingConfig.configured) return { status: "pending" };
+    const parts = [
+        pricingConfig.serviceBase[plan.service],
+        pricingConfig.propertyType[plan.type],
+        pricingConfig.floorBand[floorBand(plan.floor)],
+        pricingConfig.access[plan.access],
+        pricingConfig.parking[plan.parking],
+        pricingConfig.buildingLift[plan.lift]
+    ];
+    const complete = parts.every(function (part) { return part && typeof part.min === "number" && typeof part.max === "number"; });
+    if (!complete) {
+        console.error("[pricing] configured is true but some pricing values are missing; showing 'review required'.");
+        return { status: "pending" };
+    }
+    return {
+        status: "range",
+        min: parts.reduce(function (sum, part) { return sum + part.min; }, 0),
+        max: parts.reduce(function (sum, part) { return sum + part.max; }, 0)
+    };
+}
+
+function formatMoney(value) {
+    return new Intl.NumberFormat(HTML_LANG[currentLang], { style: "currency", currency: pricingConfig.currency, maximumFractionDigits: 0 }).format(value);
+}
+
+function estimateText(estimate) {
+    if (estimate.status === "range") return t("pl.est.range") + " : " + formatMoney(estimate.min) + " – " + formatMoney(estimate.max);
+    return t("pl.est.pending");
+}
+
+// =========================
+// MOVE PLANNER
+// Guided, deterministic questions. Never presented as artificial intelligence.
+// =========================
+const PLAN_STORAGE_KEY = "wyl.plan";
+const STEPS = ["type", "floor", "access", "service", "when", "summary"];
+const HINT_FROM_FLOOR = 3;          // from this floor up, "no lift" triggers the furniture-lift hint
+const MAX_FLOOR = 8;                // the last button means "8 and above"
+
+const OPTIONS = {
+    type:     [["apartment", "pl.type.apartment"], ["house", "pl.type.house"], ["office", "pl.type.office"], ["furniture", "pl.type.furniture"], ["other", "pl.type.other"]],
+    lift:     [["yes", "pl.yes"], ["no", "pl.no"], ["unsure", "pl.unsure"]],
+    access:   [["easy", "pl.access.easy"], ["tight", "pl.access.tight"], ["difficult", "pl.access.difficult"], ["unsure", "pl.unsure"]],
+    parking:  [["free", "pl.park.free"], ["tight", "pl.park.tight"], ["unsure", "pl.unsure"]],
+    service:  [["moving", "pl.svc.moving"], ["lift", "pl.svc.lift"], ["transport", "pl.svc.transport"], ["combined", "pl.svc.combined"], ["unsure", "pl.svc.unsure"]],
+    flexible: [["flexible", "pl.flex.flexible"], ["fixed", "pl.flex.fixed"]]
+};
+
+function emptyPlan() {
+    return { type: null, floor: null, lift: null, access: null, parking: null, service: null, origin: "", destination: "", date: "", flexible: null, ref: null, created: null };
+}
+function loadPlan() {
+    try {
+        const raw = storageGet(PLAN_STORAGE_KEY);
+        return raw ? Object.assign(emptyPlan(), JSON.parse(raw)) : emptyPlan();
+    } catch (e) { return emptyPlan(); }
+}
+function savePlan() { storageSet(PLAN_STORAGE_KEY, JSON.stringify(plan)); }
+function makeReference() {
+    const n = window.crypto.getRandomValues(new Uint32Array(1))[0] % 1000000;
+    return "WYL-" + new Date().getFullYear() + "-" + String(n).padStart(6, "0");
+}
+
+let plan = loadPlan();
+let stepIndex = plan.ref ? STEPS.indexOf("summary") : 0;
+const dialog = document.getElementById("planner");
+const plBody = document.getElementById("plBody");
+
+function optionLabel(group, value) {
+    const found = OPTIONS[group].filter(function (o) { return o[0] === value; })[0];
+    return found ? t(found[1]) : t("pl.notProvided");
+}
+function floorLabel(floor) {
+    if (floor === null || floor === undefined) return t("pl.notProvided");
+    if (floor === 0) return t("pl.floor.0");
+    return floor >= MAX_FLOOR ? t("pl.floor.8") : String(floor);
+}
+function dateLabel(iso) {
+    if (!iso) return t("pl.notProvided");
+    const d = new Date(iso + "T12:00:00");
+    return new Intl.DateTimeFormat(HTML_LANG[currentLang], { dateStyle: "long" }).format(d);
+}
+function textOrNone(value) { return value ? value : t("pl.notProvided"); }
+
+// One list of rows feeds the planner summary, the contact page, the print sheet and the message.
+function planRows(p) {
+    return [
+        ["pl.row.type", optionLabel("type", p.type)],
+        ["pl.row.floor", floorLabel(p.floor)],
+        ["pl.row.lift", optionLabel("lift", p.lift)],
+        ["pl.row.access", optionLabel("access", p.access)],
+        ["pl.row.parking", optionLabel("parking", p.parking)],
+        ["pl.row.service", optionLabel("service", p.service)],
+        ["pl.row.origin", textOrNone(p.origin)],
+        ["pl.row.destination", textOrNone(p.destination)],
+        ["pl.row.date", dateLabel(p.date) + (p.flexible && p.date ? " (" + optionLabel("flexible", p.flexible) + ")" : "")]
+    ];
+}
+function escapeHtml(value) {
+    return String(value).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; });
+}
+function rowsToHtml(rows) {
+    return rows.map(function (row) { return "<div><dt>" + escapeHtml(t(row[0])) + "</dt><dd>" + escapeHtml(row[1]) + "</dd></div>"; }).join("");
+}
+
+function radioGroup(name, group, columnsClass) {
+    return '<div class="opts ' + columnsClass + '">' + OPTIONS[group].map(function (o) {
+        const checked = plan[name] === o[0] ? " checked" : "";
+        return '<label class="opt"><input type="radio" name="' + name + '" value="' + o[0] + '"' + checked + "><span>" + escapeHtml(t(o[1])) + "</span></label>";
+    }).join("") + "</div>";
+}
+function floorGroup() {
+    let html = '<div class="opts three">';
+    for (let f = 0; f <= MAX_FLOOR; f++) {
+        const checked = plan.floor === f ? " checked" : "";
+        html += '<label class="opt"><input type="radio" name="floor" value="' + f + '"' + checked + "><span>" + escapeHtml(floorLabel(f)) + "</span></label>";
+    }
+    return html + "</div>";
+}
+function question(titleKey, inner, main) {
+    return '<fieldset class="q' + (main ? " main" : "") + '"><legend tabindex="-1">' + escapeHtml(t(titleKey)) + "</legend>" + inner + "</fieldset>";
+}
+
+function stepHtml(step) {
+    if (step === "type") return '<p class="pl-small" style="margin:0 0 .6rem">' + escapeHtml(t("pl.intro")) + "</p>" + question("pl.q.type", radioGroup("type", "type", "one"), true);
+    if (step === "floor") {
+        return question("pl.q.floor", floorGroup(), true) + question("pl.q.lift", radioGroup("lift", "lift", "three")) +
+            '<div class="hint" id="plHint" aria-live="polite"></div>';
+    }
+    if (step === "access") {
+        return question("pl.q.access", radioGroup("access", "access", ""), true) + question("pl.q.parking", radioGroup("parking", "parking", "one")) +
+            '<div class="hint" id="plHint" aria-live="polite"></div>';
+    }
+    if (step === "service") {
+        return question("pl.q.service", radioGroup("service", "service", "one"), true) + '<div class="hint" id="plHint" aria-live="polite"></div>';
+    }
+    if (step === "when") {
+        const today = new Date().toISOString().slice(0, 10);
+        return '<fieldset class="q main"><legend tabindex="-1">' + escapeHtml(t("pl.q.when")) + "</legend>" +
+            '<div class="field"><label for="plOrigin">' + escapeHtml(t("pl.origin")) + ' <span class="help">(' + escapeHtml(t("pl.optional")) + ')</span></label><input id="plOrigin" name="origin" type="text" autocomplete="address-level2" value="' + escapeHtml(plan.origin) + '"></div>' +
+            '<div class="field"><label for="plDestination">' + escapeHtml(t("pl.destination")) + ' <span class="help">(' + escapeHtml(t("pl.optional")) + ')</span></label><input id="plDestination" name="destination" type="text" autocomplete="address-level2" value="' + escapeHtml(plan.destination) + '"></div>' +
+            '<div class="field"><label for="plDate">' + escapeHtml(t("pl.date")) + ' <span class="help">(' + escapeHtml(t("pl.optional")) + ')</span></label><input id="plDate" name="date" type="date" min="' + today + '" value="' + escapeHtml(plan.date) + '"></div>' +
+            "</fieldset>" + question("pl.dateFlex", radioGroup("flexible", "flexible", "")) + "";
+    }
+    return summaryHtml();
+}
+
+function summaryHtml() {
+    const estimate = computeEstimate(plan);
+    return '<h3 class="q-title" tabindex="-1">' + escapeHtml(t("pl.q.summary")) + "</h3>" +
+        '<p><span class="pl-ref">' + escapeHtml(t("pl.ref")) + " " + escapeHtml(plan.ref) + "</span></p>" +
+        '<dl class="summary-list">' + rowsToHtml(planRows(plan)) + "</dl>" +
+        '<div class="estimate"><h4>' + escapeHtml(t("pl.est.title")) + '</h4><div class="figure">' + escapeHtml(estimateText(estimate)) + "</div>" +
+        "<p>" + escapeHtml(t("pl.est.disclaimer")) + "</p></div>" +
+        '<div class="pl-actions"><button type="button" class="btn btn-primary" id="plReview">' + escapeHtml(t("cta.review")) + '</button>' +
+        '<button type="button" class="btn btn-outline" id="plPrint">' + escapeHtml(t("pl.print")) + '</button>' +
+        '<button type="button" class="btn btn-outline" id="plRestart">' + escapeHtml(t("pl.restart")) + "</button></div>" +
+        '<p class="pl-small">' + escapeHtml(t("pl.handoff")) + "</p>";
+}
+
+function renderStep(moveFocus) {
+    const step = STEPS[stepIndex];
+    plBody.innerHTML = stepHtml(step);
+    document.getElementById("plCount").textContent = t("pl.progress", { n: stepIndex + 1, total: STEPS.length });
+    document.getElementById("plBar").style.width = ((stepIndex + 1) / STEPS.length * 100) + "%";
+    document.getElementById("plBack").hidden = stepIndex === 0;
+    document.getElementById("plNext").hidden = step === "summary";
+    document.getElementById("plError").textContent = "";
+    updateHint();
+    if (step === "summary") renderPrintSheet();
+    if (moveFocus) {
+        const target = plBody.querySelector("legend, .q-title");
+        if (target) target.focus();
+    }
+}
+
+// Contextual feedback while answering.
+function updateHint() {
+    const hint = document.getElementById("plHint");
+    if (!hint) return;
+    const step = STEPS[stepIndex];
+    let message = "";
+    if (step === "floor" && plan.floor !== null && plan.floor >= HINT_FROM_FLOOR && (plan.lift === "no" || plan.lift === "unsure")) message = t("pl.hint.lift");
+    if (step === "access" && (plan.access === "tight" || plan.access === "difficult" || plan.access === "unsure" || plan.parking === "tight")) message = t("pl.hint.access");
+    if (step === "service" && plan.service === "unsure") message = t("pl.hint.service");
+    hint.textContent = message;
+}
+
+function validateStep() {
+    const step = STEPS[stepIndex];
+    const needs = { type: ["type"], floor: ["floor", "lift"], access: ["access", "parking"], service: ["service"], when: [] }[step];
+    if (needs.some(function (field) { return plan[field] === null || plan[field] === ""; })) return t("pl.err.choose");
+    if (step === "when" && plan.date && plan.date < new Date().toISOString().slice(0, 10)) return t("pl.err.date");
+    return "";
+}
+
+function goNext() {
+    const problem = validateStep();
+    document.getElementById("plError").textContent = problem;
+    if (problem) return;
+    stepIndex += 1;
+    if (STEPS[stepIndex] === "summary") {
+        if (!plan.ref) { plan.ref = makeReference(); plan.created = new Date().toISOString(); }
+        savePlan();
+    }
+    renderStep(true);
+}
+function goBack() {
+    if (stepIndex === 0) return;
+    stepIndex -= 1;
+    renderStep(true);
+}
+function restartPlan() {
+    plan = emptyPlan();
+    stepIndex = 0;
+    storageSet(PLAN_STORAGE_KEY, JSON.stringify(plan));
+    document.dispatchEvent(new CustomEvent("wyl:planchange"));
+    renderStep(true);
+}
+
+function openPlanner() {
+    renderStep(false);
+    if (!dialog.open) dialog.showModal();
+    document.documentElement.classList.add("modal-open");
+    const target = plBody.querySelector("legend, .q-title");
+    if (target) target.focus();
+}
+function closePlanner() { if (dialog.open) dialog.close(); }
+
+function initPlanner() {
+    document.querySelectorAll("[data-open-planner]").forEach(function (button) {
+        button.addEventListener("click", openPlanner);
+    });
+    document.getElementById("plClose").addEventListener("click", closePlanner);
+    document.getElementById("plNext").addEventListener("click", goNext);
+    document.getElementById("plBack").addEventListener("click", goBack);
+    dialog.addEventListener("close", function () { document.documentElement.classList.remove("modal-open"); });
+    dialog.addEventListener("click", function (event) { if (event.target === dialog) closePlanner(); });
+
+    plBody.addEventListener("change", function (event) {
+        const input = event.target;
+        if (input.type === "radio") plan[input.name] = input.name === "floor" ? Number(input.value) : input.value;
+        else if (input.name) plan[input.name] = input.value;
+        document.getElementById("plError").textContent = "";
+        updateHint();
+    });
+    plBody.addEventListener("input", function (event) {
+        if (event.target.type === "text" || event.target.type === "date") plan[event.target.name] = event.target.value;
+    });
+    plBody.addEventListener("click", function (event) {
+        const id = event.target.id;
+        if (id === "plReview") sendPlanToContact();
+        if (id === "plPrint") printPlan();
+        if (id === "plRestart") restartPlan();
+    });
+    plBody.addEventListener("keydown", function (event) {
+        if (event.key === "Enter" && event.target.tagName === "INPUT") { event.preventDefault(); goNext(); }
+    });
+    document.addEventListener("wyl:langchange", function () { if (dialog.open) renderStep(false); });
+}
+
+function sendPlanToContact() {
+    savePlan();
+    if (document.body.dataset.page === "contact") {
+        closePlanner();
+        document.dispatchEvent(new CustomEvent("wyl:planchange"));
+        document.getElementById("request").scrollIntoView();
+    } else {
+        window.location.href = "contact.html#request";
+    }
+}
+
+// =========================
+// PRINTING
+// The print stylesheet shows only #printSheet (A4).
+// =========================
+function renderPrintSheet() {
+    const sheet = document.getElementById("printSheet");
+    if (!plan.ref) { sheet.innerHTML = ""; return; }
+    const estimate = computeEstimate(plan);
+    const issued = new Intl.DateTimeFormat(HTML_LANG[currentLang], { dateStyle: "long" }).format(new Date(plan.created));
+    sheet.innerHTML =
+        '<div class="ps-brand"><span>' + escapeHtml(COMPANY.name) + "</span><span>" + escapeHtml(plan.ref) + "</span></div>" +
+        "<h1>" + escapeHtml(t("print.title")) + "</h1>" +
+        "<p>" + escapeHtml(t("print.date")) + " : " + escapeHtml(issued) + "</p>" +
+        "<dl>" + rowsToHtml(planRows(plan)) + "</dl>" +
+        "<h2>" + escapeHtml(t("pl.est.title")) + "</h2><p><strong>" + escapeHtml(estimateText(estimate)) + "</strong></p><p>" + escapeHtml(t("pl.est.disclaimer")) + "</p>" +
+        "<h2>" + escapeHtml(t("print.assumptions")) + "</h2><ul><li>" + escapeHtml(t("print.a1")) + "</li><li>" + escapeHtml(t("print.a2")) + "</li><li>" + escapeHtml(t("print.a3")) + "</li></ul>" +
+        '<div class="ps-notice">' + escapeHtml(t("print.notice")) + "</div>" +
+        '<div class="ps-contact">' + escapeHtml(COMPANY.legalName) + " · " + escapeHtml(COMPANY.street) + ", " + escapeHtml(COMPANY.postalCode + " " + COMPANY.city) + " · " +
+        escapeHtml(t("label.vat")) + " " + escapeHtml(COMPANY.vat) + "<br>" + escapeHtml(COMPANY.phoneDisplay) + " · " + escapeHtml(COMPANY.email) + " · " + escapeHtml(COMPANY.website) + "</div>";
+}
+function printPlan() {
+    renderPrintSheet();
+    window.print();
+}
+
+// =========================
+// FORM HANDLING (contact page)
+// No backend: the form prepares an e-mail or WhatsApp message. Nothing is submitted by the site.
+// =========================
+function initContactPage() {
+    const form = document.getElementById("contactForm");
+    if (!form) return;
+    const summaryCard = document.getElementById("summaryCard");
+    const summaryEmpty = document.getElementById("summaryEmpty");
+    const summaryList = document.getElementById("summaryList");
+    const statusBox = document.getElementById("formStatus");
+    const summaryButton = document.getElementById("summaryButton");
+    const serviceSelect = form.elements.service;
+
+    function refreshFromPlan() {
+        plan = loadPlan();
+        const hasPlan = Boolean(plan.ref);
+        summaryCard.hidden = !hasPlan;
+        summaryEmpty.hidden = hasPlan;
+        summaryButton.dataset.i18n = hasPlan ? "c.sum.edit" : "c.sum.start";
+        summaryButton.textContent = t(summaryButton.dataset.i18n);
+        if (hasPlan) {
+            summaryList.innerHTML = "<div><dt>" + escapeHtml(t("pl.ref")) + "</dt><dd>" + escapeHtml(plan.ref) + "</dd></div>" + rowsToHtml(planRows(plan)) +
+                "<div><dt>" + escapeHtml(t("pl.est.title")) + "</dt><dd>" + escapeHtml(estimateText(computeEstimate(plan))) + "</dd></div>";
+            if (plan.service) serviceSelect.value = plan.service;
+            form.elements.origin.value = plan.origin;
+            form.elements.destination.value = plan.destination;
+            form.elements.date.value = plan.date;
+            form.elements.reference.value = plan.ref;
+            renderPrintSheet();
+        } else {
+            form.elements.reference.value = "";
+        }
+    }
+    refreshFromPlan();
+    document.addEventListener("wyl:planchange", refreshFromPlan);
+    document.addEventListener("wyl:langchange", function () { refreshFromPlan(); clearErrors(); });
+
+    // Route chips preselect the service
+    document.querySelectorAll("[data-route]").forEach(function (chip) {
+        chip.addEventListener("click", function () {
+            document.querySelectorAll("[data-route]").forEach(function (c) { c.setAttribute("aria-pressed", "false"); });
+            chip.setAttribute("aria-pressed", "true");
+            serviceSelect.value = chip.dataset.route;
+            document.getElementById("request").scrollIntoView();
+            form.elements.name.focus();
+        });
+    });
+
+    function setError(field, messageKey) {
+        const box = document.getElementById(field.id + "Err");
+        field.setAttribute("aria-invalid", messageKey ? "true" : "false");
+        box.textContent = messageKey ? t(messageKey) : "";
+    }
+    function clearErrors() { form.querySelectorAll("[aria-invalid]").forEach(function (f) { setError(f, ""); }); }
+
+    function validate() {
+        clearErrors();
+        let firstInvalid = null;
+        function fail(field, key) { setError(field, key); if (!firstInvalid) firstInvalid = field; }
+        const f = form.elements;
+        if (!f.name.value.trim()) fail(f.name, "c.form.err.required");
+        if (!f.phone.value.trim() && !f.email.value.trim()) fail(f.phone, "c.form.err.contact");
+        if (f.email.value.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.email.value.trim())) fail(f.email, "c.form.err.email");
+        if (!f.service.value) fail(f.service, "c.form.err.required");
+        if (!f.message.value.trim() && !plan.ref) fail(f.message, "c.form.err.required");
+        if (firstInvalid) firstInvalid.focus();
+        return !firstInvalid;
+    }
+
+    function buildMessage() {
+        const f = form.elements;
+        const serviceLabel = f.service.options[f.service.selectedIndex].textContent;
+        const lines = [t("c.form.greeting"), ""];
+        lines.push(t("c.form.name") + ": " + f.name.value.trim());
+        if (f.phone.value.trim()) lines.push(t("c.form.phone") + ": " + f.phone.value.trim());
+        if (f.email.value.trim()) lines.push(t("c.form.email") + ": " + f.email.value.trim());
+        lines.push(t("c.form.service") + ": " + serviceLabel);
+        if (f.origin.value.trim()) lines.push(t("c.form.origin") + ": " + f.origin.value.trim());
+        if (f.destination.value.trim()) lines.push(t("c.form.destination") + ": " + f.destination.value.trim());
+        if (f.date.value) lines.push(t("c.form.date") + ": " + dateLabel(f.date.value));
+        if (plan.ref) {
+            lines.push("", t("pl.q.summary").toUpperCase(), t("pl.ref") + ": " + plan.ref);
+            planRows(plan).forEach(function (row) { lines.push(t(row[0]) + ": " + row[1]); });
+            lines.push(t("pl.est.title") + ": " + estimateText(computeEstimate(plan)));
+        }
+        if (f.message.value.trim()) lines.push("", t("c.form.message") + ":", f.message.value.trim());
+        return lines.join("\n");
+    }
+
+    form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        if (!validate()) return;
+        const body = buildMessage();
+        if (form.elements.method.value === "whatsapp") {
+            window.open("https://wa.me/" + COMPANY.whatsapp + "?text=" + encodeURIComponent(body), "_blank", "noopener");
+        } else {
+            window.location.href = "mailto:" + COMPANY.email + "?subject=" + encodeURIComponent(t("c.form.subject")) + "&body=" + encodeURIComponent(body);
+        }
+        statusBox.textContent = t("c.form.sent");
+        statusBox.hidden = false;
+    });
+}
+
+// =========================
+// STRUCTURED DATA
+// Only facts supplied by the owner. No ratings, reviews, hours, prices or coordinates.
+// =========================
+function injectStructuredData() {
+    const page = document.body.dataset.page;
+    const business = {
+        "@type": "MovingCompany",
+        "@id": COMPANY.website + "#business",
+        name: COMPANY.name,
+        legalName: COMPANY.legalName,
+        url: COMPANY.website,
+        telephone: COMPANY.phone,
+        email: COMPANY.email,
+        vatID: COMPANY.vat,
+        address: { "@type": "PostalAddress", streetAddress: COMPANY.street, postalCode: COMPANY.postalCode, addressLocality: COMPANY.city, addressCountry: "BE" },
+        areaServed: "Bruxelles et alentours"
+    };
+    const graph = [business];
+    if (page === "lift") {
+        graph.push({
+            "@type": "Service", name: "Monte-meubles", serviceType: "Monte-meubles / furniture lift", areaServed: "Bruxelles et alentours",
+            url: COMPANY.website + "monte-meubles.html", provider: { "@id": COMPANY.website + "#business" }
+        });
+        graph.push({
+            "@type": "BreadcrumbList",
+            itemListElement: [
+                { "@type": "ListItem", position: 1, name: "Accueil", item: COMPANY.website },
+                { "@type": "ListItem", position: 2, name: "Monte-meubles", item: COMPANY.website + "monte-meubles.html" }
+            ]
+        });
+    }
+    const script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.textContent = JSON.stringify({ "@context": "https://schema.org", "@graph": graph });
+    document.head.appendChild(script);
+}
+
+// =========================
+// FUTURE AI ENDPOINT
+// Integration point only. While AI_ENDPOINT is null nothing is called and nothing is claimed.
+// A serverless function must hold any API key; never place credentials in this file.
+// Expected response: { notes: [string], questions: [string] } — planning notes only.
+// It must never return prices, availability, capacity, insurance or commitments.
+// =========================
+async function requestAiPlanningNotes(currentPlan) {
+    if (!AI_ENDPOINT) return null;
+    const response = await fetch(AI_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ plan: currentPlan, language: currentLang })
+    });
+    if (!response.ok) throw new Error("AI endpoint error: " + response.status);
+    return response.json();
+}
+
+// =========================
+// START
+// =========================
+checkTranslations();
+initLanguageSwitch();
+initNavigation();
+initImageSlots();
+initPlanner();
+injectStructuredData();
+applyLanguage(detectLanguage());
+initContactPage();
+if (window.location.hash === "#plan") openPlanner();
+
+</script>
+</body>
+</html>
 
